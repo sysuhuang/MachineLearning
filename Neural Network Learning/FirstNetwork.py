@@ -86,21 +86,16 @@ class network:
             loss = mse_loss(y_true, y_preds)
             print("Epoch %d loss: %.3f" % (epoch, loss))
 
-# Define dataset
-data = np.array([
-  [-2, -1],  # Alice
-  [25, 6],   # Bob
-  [17, 4],   # Charlie
-  [-15, -6], # Diana
-])
-all_y_trues = np.array([
-  1, # Alice
-  0, # Bob
-  0, # Charlie
-  1, # Diana
-])
 
-# Train our neural network!
+data = np.array([
+  [-2, -1],
+  [25, 6],
+  [17, 4],
+  [-15, -6], 
+])
+all_y_trues = np.array([1,0,0,1])
+
+
 network = network(0.1,1000)
 network.train(data, all_y_trues)
 
